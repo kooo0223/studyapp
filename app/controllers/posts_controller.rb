@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :post_find, only: [:destroy, :edit, :update, :show]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @posts = Post.order('created_at DESC')
@@ -36,10 +37,16 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:question_text, :answer_text, :question_image, :answer_image)
+    params.require(:post).permit(:question_text, :answer_text, :question_image, :answer_image).merge(user_id: current_user.id)
   end
 
   def post_find
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
