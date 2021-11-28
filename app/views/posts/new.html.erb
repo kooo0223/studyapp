@@ -1,12 +1,6 @@
 <div class="contents row">
   <div class="container">
     <h3>投稿する</h3>
-    <%= form_with(model: @post, local: true) do |form| %>
-      <%= form.text_area :question_text, placeholder: "問題", rows: "10" %>
-      <%= form.text_field :question_image, placeholder: "問題画像 Url" %>
-      <%= form.text_area :answer_text, placeholder: "解答", rows: "10" %>
-      <%= form.text_field :answer_image, placeholder: "解答画像 Url" %>
-      <%= form.submit "SEND" %>
-    <% end %>
+    <%= render partial: "form", locals: { post: @post } %>
   </div>
 </div>
