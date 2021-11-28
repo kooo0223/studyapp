@@ -16,7 +16,7 @@
 
 ### Association
 - has_many :questions
-- has_many :messages
+- has_many :comments
 
 ## questions テーブル
 
@@ -29,9 +29,9 @@
 
 ### Association
 - belongs_to: user
-- has_many: messages
+- has_many: comments
 
-## messages テーブル
+## comment テーブル
 
 | Column       | Type       | Options                        |
 | -------------| ---------- | ------------------------------ |
@@ -40,4 +40,4 @@
 
 ### Association
 - belongs_to: user
-- belongs_to: messages
+- belongs_to: comment
