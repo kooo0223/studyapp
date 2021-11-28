@@ -12,7 +12,9 @@
       </ul>
     </div>
     <p><%= @post.question_text %></p>
-    <span class="name"><%= @post.answer_text %>
-    </span>
+    <span class="name">
+      <a href="/users/<%= post.user.id %>">
+        <%= post.user.nickname %>
+      </span>
   </div>
 </div>
