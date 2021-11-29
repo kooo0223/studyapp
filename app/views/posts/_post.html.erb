@@ -1,4 +1,4 @@
-<div class="content_post" style="background-image: url(<%= post.question_image %>);">
+<div class="content_post">
   <div class="more">
     <span><%= image_tag 'arrow_top.png' %></span>
     <ul class="more_list">
@@ -15,12 +15,28 @@
       <% end %>
     </ul>
   </div>
-</div>
-<div>
-  <p><%= post.question_text %></p>
-  <p><%= post.answer_text %></p>
-  <span class="name">
-  <a href="/users/<%= post.user.id %>">
-    <%= post.user.nickname %>
-  </span>
+
+  <div class="upper-message">
+    <div class="message-user">
+      <a href="/users/<%= post.user.id %>">
+        <%= post.user.nickname %>
+    </div>
+
+    <div class="message-date">
+      <%= l post.created_at %>
+    </div>
+  </div>
+
+  <div class="lower-message">
+    <div class="message-content">
+      <%= post.question_text %>
+    </div>
+  </div>
+
+  <div class="lower-message">
+    <div class="message-content">
+      <%= post.answer_text %>
+    </div>
+  </div>
+
 </div>
