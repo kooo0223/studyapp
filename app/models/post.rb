@@ -1,8 +1,12 @@
 class Post < ApplicationRecord
-  validates :question_text, presence: true
-  validates :answer_text, presence: true
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  validates  :question_text, presence: true
+  validates  :answer_text, presence: true
+  has_many   :comments
   belongs_to :user
-  has_many :comments
+  belongs_to :subject
+
+  validates :subject_id,            numericality: { other_than: 1, message: "can't be blank" }
 
   def self.search(search)
     if search != ""
