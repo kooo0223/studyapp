@@ -1,13 +1,23 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with model: post, id: 'new_post', local: true do |f| %>
   <div class="weight-bold-text">
     科目
     <span class="indispensable">必須</span>
   </div>
-  <%= form.collection_select(:subject_id, Subject.all, :id, :name, {}, {class:"post-subject"}) %>
+  <%= f.collection_select(:subject_id, Subject.all, :id, :name, {}, {class:"post-subject"}) %>
 
-  <%= form.text_area :question_text, placeholder: "問題", rows: "10" %>
-  <%= form.text_field :question_image, placeholder: "問題画像 Url" %>
-  <%= form.text_area :answer_text, placeholder: "解答", rows: "10" %>
-  <%= form.text_field :answer_image, placeholder: "解答画像 Url" %>
-  <%= form.submit "SEND" %>
+  <%= f.text_area :question_text, placeholder: "問題", rows: "10" %>
+  <div class="image-field">
+    <div id="previews"></div>
+    <div class="click-upload">
+      <%= f.file_field :question_image %>
+    </div>
+  </div>
+  <%= f.text_area :answer_text, placeholder: "解答", rows: "10" %>
+  <div class="image-field">
+    <div id="previews"></div>
+    <div class="click-upload">
+      <%= f.file_field :answer_image %>
+    </div>
+  </div>
+  <%= f.submit "SEND" %>
 <% end %>
