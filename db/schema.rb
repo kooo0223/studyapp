@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_063839) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "question_text", null: false
     t.string "answer_text", null: false
-    t.text "question_image"
-    t.text "answer_image"
     t.integer "subject_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

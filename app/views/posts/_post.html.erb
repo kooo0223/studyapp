@@ -31,12 +31,12 @@
     <div class="message-content">
       <%= post.question_text %>
     </div>
-  </div>
+    <%= image_tag post.question_image.variant(resize: '200x200'), class: 'question-image' if post.question_image.attached? %>
 
-  <div class="lower-message">
     <div class="message-content">
       <%= post.answer_text %>
     </div>
+    <%= image_tag post.answer_image.variant(resize: '200x200'), class: 'answer-image' if post.answer_image.attached? %>
   </div>
 
 </div>

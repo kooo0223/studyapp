@@ -862,14 +862,14 @@ div.contents.row div.content_post {
   margin: 20px 0;
   padding: 30px;
   position: relative;
-  height: 400px;
+  height: 200px;
   color: #fff;
   background-size: cover;
   background-position: center center;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
-
+/*
 div.contents.row div.content_post:after {
   content: '';
   position: absolute;
@@ -887,7 +887,7 @@ div.contents.row div.content_post:after {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
   z-index: 1;
   border-radius: 3px;
-}
+*/
 
 div.contents.row div.content_post .more {
   position: absolute;
@@ -933,6 +933,11 @@ div.contents.row div.content_post .more ul.more_list li a {
 div.contents.row div.content_post .more ul.more_list li a:hover {
   background-color: #57C3E9;
   color: #fff;
+}
+
+div.upper-message{
+  display: flex;
+  justify-content: space-between;
 }
 
 div.contents.row div.content_post p {
