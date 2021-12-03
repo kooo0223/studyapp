@@ -822,6 +822,43 @@ header.header .user_nav ul li a {
   border-bottom: 1px solid #d8d8d8;
 }
 
+/* プルダウンメニュー */
+.navbar {
+  width: 50%;
+}
+.nav-lists {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.red{
+  background-color: red;
+}
+.show-lists{
+  width: 200px;
+  position: absolute;
+  right: 370px;
+  top: 70px;
+  background-color: #ffffff;
+}
+.background-red{
+  background-color: #FF6666 ;
+  color: white;
+}
+.pull-down-list{
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #eee;
+}
+.contents{
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+.list-status{
+  width: 230px;
+}
+/* プルダウンメニュー */
+
 .form {
   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
   background-size: cover;
@@ -862,14 +899,14 @@ div.contents.row div.content_post {
   margin: 20px 0;
   padding: 30px;
   position: relative;
-  height: 400px;
+  height: 500px;
   color: #fff;
   background-size: cover;
   background-position: center center;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
-
+/*
 div.contents.row div.content_post:after {
   content: '';
   position: absolute;
@@ -887,7 +924,7 @@ div.contents.row div.content_post:after {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
   z-index: 1;
   border-radius: 3px;
-}
+*/
 
 div.contents.row div.content_post .more {
   position: absolute;
@@ -933,6 +970,16 @@ div.contents.row div.content_post .more ul.more_list li a {
 div.contents.row div.content_post .more ul.more_list li a:hover {
   background-color: #57C3E9;
   color: #fff;
+}
+
+div.upper{
+  display: flex;
+  justify-content: space-between;
+}
+
+img.image{
+  display: block;
+  margin: 0 auto;
 }
 
 div.contents.row div.content_post p {
