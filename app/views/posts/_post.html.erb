@@ -1,4 +1,5 @@
 <div class="content_post">
+
   <div class="more">
     <span><%= image_tag 'arrow_top.png' %></span>
     <ul class="more_list">
@@ -29,16 +30,26 @@
 
   <div class="question">
     <div class="post-content">
-      <%= post.question_text %>
+      <div class="item">
+        <b> 問題 </b>
+        <div>
+          <%= post.question_text %>
+        </div>
+        <%= image_tag post.question_image.variant(resize: '300x300'), class: 'image' if post.question_image.attached? %>
+      </div>
     </div>
-    <%= image_tag post.question_image.variant(resize: '300x300'), class: 'image' if post.question_image.attached? %>
   </div>
 
   <div class="answer">
     <div class="post-content">
-      <%= post.answer_text %>
+      <div class="item">
+        <b> 解答 </b>
+        <div>
+          <%= post.answer_text %>
+        </div>
+        <%= image_tag post.answer_image.variant(resize: '300x300'), class: 'image' if post.answer_image.attached? %>
+      </div>
     </div>
-    <%= image_tag post.answer_image.variant(resize: '300x300'), class: 'image' if post.answer_image.attached? %>
   </div>
 
 </div>

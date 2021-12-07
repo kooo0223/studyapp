@@ -14,18 +14,6 @@
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">Social Network Study</a></h1>
         
-        <div class="navbar">
-          <ul class="nav-lists">
-            <li class="list-status">
-              現在のリスト；
-              <span>選択されていません</span>
-            </li>
-            <li class="background-red" id="lists">リスト
-            </li>
-          </ul>
-          <ul class="show-lists"></ul>
-        </div>
-        
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <span><%= current_user.nickname %>
@@ -44,13 +32,17 @@
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
           </div>
         <% end %>
+
       </div>
     </header>
+
     <%= yield %>
+<!--
     <footer>
       <p>
         Copyright Social Network Study 2021.
       </p>
     </footer>
+-->
   </body>
 </html>
