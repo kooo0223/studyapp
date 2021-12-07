@@ -37,17 +37,17 @@
 }
 
 .main div.content_post {
-  margin: 20px 0;
+  margin: 30px auto;
   padding: 20px;
   position: relative;
   height: auto;
   width: 70vw;
-  color: #fff;
+  color: #666;
+  background-color: white;
   background-size: cover;
   background-position: center center;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  margin: 0 auto;
 }
 
 /*名前と投稿時間*/
@@ -186,7 +186,8 @@ form input[type="submit"]:hover {
 
 /*投稿ページのレイアウト*/
 .container {
-  margin: 20px 0;
+  width: 70vw;
+  margin: 30px auto;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
@@ -216,6 +217,16 @@ form input[type="submit"]:hover {
 }
 
 /*ヘッダー*/
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 80vw;
+  *zoom: 1;
+}
+
 .header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
