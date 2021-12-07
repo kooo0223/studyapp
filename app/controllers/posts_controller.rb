@@ -41,6 +41,10 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
   end
 
+  def choice
+    @posts = Post.where(subject_id: params[:id])
+  end
+
   private
   def post_params
     params.require(:post).permit(:subject_id, :question_text, :answer_text, :question_image, :answer_image).merge(user_id: current_user.id)
