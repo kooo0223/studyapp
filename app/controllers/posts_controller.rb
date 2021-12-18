@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def choice
-    @posts = Post.where(subject_id: params[:id])
+    @posts = Post.where(subject_id: params[:id]).order('created_at DESC')
   end
 
   private

@@ -51,7 +51,7 @@ a:hover {
   padding: 5px;
   text-align: center;
   color: #fff;
-  background-color: #9fb3ff;
+  background-image: linear-gradient( 135deg, #5edcfc 10%, #6e84fe 100%);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
@@ -60,12 +60,13 @@ a:hover {
 .upper{
   justify-content: space-between;
   padding: 3px 30px;
-  background-color: #e3e8ff;
+  border-radius: 8px 8px 0 0;
+  background-image: linear-gradient( 135deg, #5edcfc 10%, #6e84fe 100%);
 }
 
 .post-date{
   font-size: 8px;
-  color: rgb(179, 179, 179);
+  color: rgb(255, 255, 255);
 }
 
 /*詳細・編集・削除タグ*/
@@ -133,39 +134,38 @@ img.image{
 .side-bar {
   width: 150px;
   height: 100vh;
-  background-color: #adadad;
+  background-image: linear-gradient( 180deg, #adadad 10%, #777777 100%);
 }
 
 .side-bar_1 {
   width: 150px;
   height: 100vh;
-  background-color: #ff9f9f;
+  background-image: linear-gradient( 180deg, #fda8a8 10%, #ff5050 100%);
 }
 
 .side-bar_2 {
   width: 150px;
   height: 100vh;
-  background-color: #bc9fff;
+  background-image: linear-gradient( 180deg, #ae8bff 10%, #743ef3 100%);
 }
 
 .side-bar_3 {
   width: 150px;
   height: 100vh;
-  background-color: #9fb3ff;
+  background-image: linear-gradient( 180deg, #9fb3ff 10%, #3960fc 100%);
 }
 
 .side-bar_4 {
   width: 150px;
   height: 100vh;
-  background-color: #6cd186;
+  background-image: linear-gradient( 180deg, #7fe498 10%, #1da33e 100%);
 }
 
 .side-bar_5 {
   width: 150px;
   height: 100vh;
-  background-color: #f1af79;
+  background-image: linear-gradient( 180deg, #ffc595 10%, #ec710c 100%);
 }
-
 
 
 label {
@@ -192,10 +192,45 @@ label {
   color: #666;
 }
 
-.menu ul {
+/*サイドバー ドロップダウンのスタイル*/
+.list {
+  margin: 0;
+  padding: 0 0 0 15px;
+  background :#c7c7c7;
+  list-style: none;
+}
+
+.list_1 {
+  margin: 0;
+  padding: 0 0 0 15px;
+  background :#ffddd8;
+  list-style: none;
+}
+.list_2 {
+  margin: 0;
+  padding: 0 0 0 15px;
+  background :#f1d8ff;
+  list-style: none;
+}
+
+.list_3 {
   margin: 0;
   padding: 0 0 0 15px;
   background :#d8e0ff;
+  list-style: none;
+}
+
+.list_4 {
+  margin: 0;
+  padding: 0 0 0 15px;
+  background :#d9ffd8;
+  list-style: none;
+}
+
+.list_5 {
+  margin: 0;
+  padding: 0 0 0 15px;
+  background :#ffedd8;
   list-style: none;
 }
 
@@ -218,13 +253,12 @@ label {
   opacity: 1;
 }
 
-.other a{
+.others a{
   display: block;
   margin: 0 0 4px 0;
   padding : 15px;
   line-height: 1;
   color :#fff;
-  background : #9fb3ff;
   cursor :pointer;
 }
 
@@ -240,7 +274,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #9fb3ff;
+  background-image: linear-gradient( 135deg, #5edcfc 10%, #6e84fe 100%);
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -262,7 +296,8 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 .btn:hover,
 header.header div.header__bar.row div.grid-6 a.post:hover {
-  background-color: #7b90e4;
+  border: 2px solid #9fb3ff;
+  background-image: linear-gradient( 135deg, #5edcfc 10%, #6e84fe 100%);
   color: #fff;
 }
 
@@ -428,4 +463,14 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/*サインイン・サインアップ*/
+.info {
+  display: block;
+  margin: 0 0 4px 0;
+  padding: 30px 0 0 15px;
+  line-height: 1;
+  color :#666;
+  cursor :pointer;
 }
