@@ -1,41 +1,88 @@
-<div class="contents row">
-  <div class="content_post" style="background-image: url(<%= @post.question_image %>);">
-  <% if user_signed_in? && current_user.id == @post.user_id %>
-      <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-          <li>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "side_bar" %>
+  </div>
+  <div class="main">    
+    <div class="content_post">
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="more">
+          <span><%= image_tag 'dot.png' %></span>
+          <ul class="more_list">
+            <li>
               <%= link_to '編集', edit_post_path(@post.id), method: :get%>
             </li>
             <li>
               <%= link_to '削除', post_path(@post.id), method: :delete %>
             </li>
-        </ul>
-      </div>
-    <% end %>
-    <p><%= @post.question_text %></p>
-    <span class="name">
-      <a href="/users/<%= @post.user.id %>">
-        <%= @post.user.nickname %>
-      </a>
-      </span>
-  </div>
-  <div class="container">
-    <% if user_signed_in? %>
-      <%= form_with(model: [@post, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
+          </ul>
+        </div>
       <% end %>
-    <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-    <% end %>
-    <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
-        </p>
+
+      <div class="upper">
+        <div class="post-user">
+          <a href="/users/<%= @post.user.id %>">
+            <%= @post.user.nickname %>
+          </a>
+        </div>
+
+        <div class="post-date">
+          <%= l @post.created_at %>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="post-content">
+          <div class="item">
+            <b> 問題 </b>
+            <div>
+              <%= @post.question_text %>
+            </div>
+            <%= image_tag @post.question_image.variant(resize: '300x300'), class: 'image' if @post.question_image.attached? %>
+          </div>
+        </div>
+      </div>
+
+      <div class="answer">
+        <% if user_signed_in? %>
+          <% number = 0 %>
+          <% @comments.each do |comment| %>
+            <% if current_user.id == comment.user_id %>
+              <% number = comment.user_id %>
+            <% end %>
+          <% end %>
+
+          <% if (current_user.id == @post.user_id) || (current_user.id == number)  %>
+            <div class="post-content">
+              <div class="item">
+                <b> 解答 </b>
+                <div>
+                  <%= @post.answer_text %>
+                </div>
+                <%= image_tag @post.answer_image.variant(resize: '300x300'), class: 'image' if @post.answer_image.attached? %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="comments">
+        <h4>＜コメント一覧＞</h4>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="container">
+      <% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |form| %>
+          <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+          <%= form.submit "SEND" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
     </div>
   </div>

@@ -38,4 +38,17 @@
     </div>
   </div>
 
+
+  <div class="answer">
+    <div class="post-content">
+      <div class="item">
+        <b> 解答 </b>
+        <div>
+          <%= post.answer_text %>
+        </div>
+        <%= image_tag post.answer_image.variant(resize: '300x300'), class: 'image' if post.answer_image.attached? %>
+      </div>
+    </div>
+  </div>
+
 </div>

@@ -4,18 +4,24 @@
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <div class="info">
+          Email
+        </div>
         <%= f.email_field :email %>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
+        <div class="info">
+          Password
+        </div>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class="field">
-          <%= f.label :remember_me %><br />
+          <div class="info">
+            Remember_me
+          </div>
           <%= f.check_box :remember_me %>
         </div>
       <% end -%>

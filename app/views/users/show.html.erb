@@ -1,11 +1,22 @@
 <div class="wrapper">
+
   <div class="side-bar">
     <%= render "posts/side_bar" %>
   </div>
+
   <div class="main">
-    <p><%= @nickname %>さんの投稿一覧</p>
+
+    <div class="name">
+      <%= @nickname %>さんの出題
+    </div>
+
     <% @posts.each do |post| %>
-      <%= render partial: "posts/post", locals: { post: post } %>
+      <% if current_user.id == post.user_id %>
+        <%= render partial: "post", locals: { post: post } %>
+      <% else %>
+        <%= render partial: "posts/post", locals: { post: post } %>
+      <% end %>
     <% end %>
+
   </div>
 </div>
